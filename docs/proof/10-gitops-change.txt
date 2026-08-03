@@ -1,9 +1,10 @@
-== GitOps change flow: git commit -> Argo CD sync -> Deployment change ==
+== GitOps change flow: git commit -> Argo CD sync -> rolling update ==
 
-replicas before: 2
-commit bdbf8c9  scale api to 3 replicas
-app revision synced: bdbf8c95
-replicas after:  2 (ready: 2)
-qoves-api-694544794d-gvmts   1/1   Running       0     107m
-qoves-api-694544794d-hb4d4   0/1   Terminating   0     3s
-qoves-api-694544794d-xgnzl   1/1   Running       0     107m
+commit 29d0cb7  roll api pods: config revision 2
+commit 217580d  hpa owns replica count: drop spec.replicas from deployment
+app synced revision: 29d0cb71
+pod-template annotation now: 2
+qoves-api-75dfdffcb-djqtm   1/1   Running   0     2m50s
+qoves-api-75dfdffcb-vgmpr   1/1   Running   0     3m7s
+
+note: spec.replicas is intentionally absent from git; the HPA owns scale (min 2, max 5).
