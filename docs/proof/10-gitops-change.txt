@@ -1,0 +1,9 @@
+== GitOps change flow: git commit -> Argo CD sync -> Deployment change ==
+
+replicas before: 2
+commit bdbf8c9  scale api to 3 replicas
+app revision synced: bdbf8c95
+replicas after:  2 (ready: 2)
+qoves-api-694544794d-gvmts   1/1   Running       0     107m
+qoves-api-694544794d-hb4d4   0/1   Terminating   0     3s
+qoves-api-694544794d-xgnzl   1/1   Running       0     107m

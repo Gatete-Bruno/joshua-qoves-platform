@@ -5,7 +5,6 @@ metadata:
   labels:
     app: qoves-api
 spec:
-  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -17,6 +16,8 @@ spec:
     metadata:
       labels:
         app: qoves-api
+      annotations:
+        qoves.io/config-revision: "1"
     spec:
       automountServiceAccountToken: false
       securityContext:
