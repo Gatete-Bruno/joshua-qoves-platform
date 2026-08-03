@@ -17,7 +17,7 @@ spec:
       labels:
         app: qoves-api
       annotations:
-        qoves.io/config-revision: "1"
+        qoves.io/config-revision: "2"
     spec:
       automountServiceAccountToken: false
       securityContext:
