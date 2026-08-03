@@ -1,7 +1,7 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Backup
 metadata:
-  name: qoves-db-verify
+  name: qoves-db-verify-2
   namespace: qoves-app
 spec:
   cluster:

@@ -1,0 +1,18 @@
+== HPA scale-out under load (8 parallel curl loops via ingress) ==
+qoves-api   Deployment/qoves-api   cpu: 5%/70%   2     5     2     155m
+--- t=60s
+qoves-api   Deployment/qoves-api   cpu: 167%/70%   2     5     5     156m
+replicas=5 ready=2
+--- t=120s
+qoves-api   Deployment/qoves-api   cpu: 208%/70%   2     5     5     157m
+replicas=5 ready=5
+--- t=180s
+qoves-api   Deployment/qoves-api   cpu: 88%/70%   2     5     5     158m
+replicas=5 ready=5
+--- t=240s
+qoves-api   Deployment/qoves-api   cpu: 155%/70%   2     5     5     159m
+replicas=5 ready=5
+--- t=300s
+qoves-api   Deployment/qoves-api   cpu: 124%/70%   2     5     5     160m
+replicas=5 ready=5
+--- load stopped; scaleDown stabilization window is 300s
