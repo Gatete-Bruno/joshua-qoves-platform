@@ -1,0 +1,9 @@
+NAME                                            REFERENCE              TARGETS       MINPODS   MAXPODS   REPLICAS   AGE
+horizontalpodautoscaler.autoscaling/qoves-api   Deployment/qoves-api   cpu: 5%/70%   2         5         2          104m
+
+NAME                      REQUEST                                                            LIMIT                                            AGE
+resourcequota/qoves-app   pods: 4/15, requests.cpu: 300m/1500m, requests.memory: 640Mi/2Gi   limits.cpu: 1500m/4, limits.memory: 1280Mi/4Gi   105m
+
+NAME                                          MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+poddisruptionbudget.policy/qoves-api          1               N/A               1                     104m
+poddisruptionbudget.policy/qoves-db-primary   1               N/A               0                     89m

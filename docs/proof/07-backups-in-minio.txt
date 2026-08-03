@@ -1,0 +1,3 @@
+NAME                            AGE   CLUSTER    METHOD              PHASE    ERROR
+qoves-db-daily-20260803141252   93m   qoves-db   barmanObjectStore   failed   instance manager was restarted during backup on pod qoves-db-1
+/data/qoves-backups:

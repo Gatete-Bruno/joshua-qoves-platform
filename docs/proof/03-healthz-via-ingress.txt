@@ -1,0 +1,4 @@
+$ curl -H 'Host: qoves.local' http://192.168.49.2:30588/healthz
+ok
+$ curl -H 'Host: qoves.local' http://192.168.49.2:30588/
+hello from the QOVES take-home API

@@ -1,0 +1,6 @@
+# PromQL: up{namespace="qoves-app"}  and the alert rule state
+OCI runtime exec failed: exec failed: unable to start container process: exec: "wget": executable file not found in $PATH
+command terminated with exit code 127
+
+command terminated with exit code 127
+OCI runtime exec failed: exec failed: unable to start container process: exec: "wget": executable file not found in $PATH

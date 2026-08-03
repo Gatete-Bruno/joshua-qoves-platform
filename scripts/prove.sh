@@ -4,6 +4,7 @@ cd "$(dirname "$0")/.."
 OUT=docs/proof
 mkdir -p "$OUT"
 IP=$(minikube ip)
+NP=$(kubectl -n ingress-nginx get svc ingress-nginx-controller -o jsonpath='{.spec.ports[?(@.port==80)].nodePort}')
 
 {
   kubectl get pods,svc,ingress,netpol -A
@@ -14,10 +15,10 @@ IP=$(minikube ip)
 kubectl -n argocd get applications -o wide > "$OUT/02-argocd-apps.txt" 2>&1
 
 {
-  echo "\$ curl -H 'Host: qoves.local' http://$IP/healthz"
-  curl -sS -H 'Host: qoves.local' "http://$IP/healthz"
-  echo "\$ curl -H 'Host: qoves.local' http://$IP/"
-  curl -sS -H 'Host: qoves.local' "http://$IP/"
+  echo "\$ curl -H 'Host: qoves.local' http://$IP:$NP/healthz"
+  curl -sS -H 'Host: qoves.local' "http://$IP:$NP/healthz"
+  echo "\$ curl -H 'Host: qoves.local' http://$IP:$NP/"
+  curl -sS -H 'Host: qoves.local' "http://$IP:$NP/"
 } > "$OUT/03-healthz-via-ingress.txt" 2>&1
 
 {
@@ -36,6 +37,9 @@ try:
     print(urllib.request.urlopen("https://example.com", timeout=5).status)
 except Exception as e:
     print("BLOCKED:", type(e).__name__, e)'
+  echo
+  echo '# hubble flow verdicts for the qoves-app namespace (DROPPED = policy enforced)'
+  kubectl -n kube-system exec ds/cilium -c cilium-agent -- hubble observe --namespace qoves-app --verdict DROPPED --last 12 2>/dev/null
 } > "$OUT/04-netpol-blocks.txt" 2>&1
 
 {
@@ -62,11 +66,9 @@ except Exception as e:
 
 {
   echo '# PromQL: up{namespace="qoves-app"}  and the alert rule state'
-  kubectl -n monitoring exec sts/prometheus-monitoring-kube-prometheus-prometheus -c prometheus -- \
-    wget -qO- 'http://localhost:9090/api/v1/query?query=up{namespace="qoves-app"}'
+  kubectl get --raw '/api/v1/namespaces/monitoring/services/monitoring-kube-prometheus-prometheus:9090/proxy/api/v1/query?query=up%7Bnamespace%3D%22qoves-app%22%7D'
   echo
-  kubectl -n monitoring exec sts/prometheus-monitoring-kube-prometheus-prometheus -c prometheus -- \
-    wget -qO- 'http://localhost:9090/api/v1/rules' | head -c 4000
+  kubectl get --raw '/api/v1/namespaces/monitoring/services/monitoring-kube-prometheus-prometheus:9090/proxy/api/v1/rules' | head -c 4000
 } > "$OUT/08-prometheus.txt" 2>&1
 
 kubectl -n qoves-app get hpa,quota,pdb > "$OUT/09-hpa-quota.txt" 2>&1

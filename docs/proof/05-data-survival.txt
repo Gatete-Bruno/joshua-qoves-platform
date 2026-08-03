@@ -1,0 +1,14 @@
+Defaulted container "postgres" out of: postgres, bootstrap-controller (init)
+CREATE TABLE
+INSERT 0 1
+pod "qoves-db-1" deleted from qoves-app namespace
+primary was: qoves-db-1  now: qoves-db-2
+Defaulted container "postgres" out of: postgres, bootstrap-controller (init)
+ id |       note        |              at               
+----+-------------------+-------------------------------
+  1 | before pod delete | 2026-08-03 15:46:02.664145+00
+(1 row)
+
+NAME         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS      VOLUMEATTRIBUTESCLASS   AGE
+qoves-db-1   Bound    pvc-8f17c2d7-e3fe-4b95-ac6c-e8e8ccc8d854   1Gi        RWO            csi-hostpath-sc   <unset>                 83m
+qoves-db-2   Bound    pvc-8211a1b1-8320-459c-b9ba-4f8f5c07a60c   1Gi        RWO            csi-hostpath-sc   <unset>                 16m

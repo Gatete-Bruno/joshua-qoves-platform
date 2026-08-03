@@ -1,0 +1,8 @@
+# unsigned image (expect admission denial by Kyverno)
+Error from server: admission webhook "mutate.kyverno.svc-fail" denied the request: 
+
+resource Pod/qoves-app/unsigned-test was blocked due to the following policies 
+
+require-signed-images:
+  qoves-api-signed: 'failed to verify image registry:5000/qoves-api:unsigned: .attestors[0].entries[0].keys:
+    no signatures found'

@@ -4,6 +4,7 @@ cd "$(dirname "$0")/.."
 OUT=docs/proof
 mkdir -p "$OUT"
 IP=$(minikube ip)
+NP=$(kubectl -n ingress-nginx get svc ingress-nginx-controller -o jsonpath='{.spec.ports[?(@.port==80)].nodePort}')
 
 {
   echo "== chaos: kill the Postgres primary while /healthz is under load =="
@@ -11,7 +12,7 @@ IP=$(minikube ip)
   echo "primary before: $PRIMARY"
   (for i in $(seq 1 240); do
      printf '%s %s\n' "$(date +%T.%3N)" \
-       "$(curl -s -o /dev/null -w '%{http_code}' --max-time 2 -H 'Host: qoves.local' http://$IP/healthz)"
+       "$(curl -s -o /dev/null -w '%{http_code}' --max-time 2 -H 'Host: qoves.local' http://$IP:$NP/healthz)"
      sleep 0.5
    done) > /tmp/chaos-load.log &
   LOAD=$!

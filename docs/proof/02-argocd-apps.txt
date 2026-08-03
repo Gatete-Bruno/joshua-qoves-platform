@@ -1,0 +1,13 @@
+NAME               SYNC STATUS   HEALTH STATUS   REVISION                                   PROJECT
+api                Synced        Healthy         a82d9d04262cbfc86aadd2b98edaebf3fc60ee2b   default
+cnpg-operator      Synced        Healthy         0.29.0                                     default
+database           Synced        Healthy         a82d9d04262cbfc86aadd2b98edaebf3fc60ee2b   default
+kyverno            OutOfSync     Healthy         3.8.2                                      default
+minio              Synced        Healthy         a82d9d04262cbfc86aadd2b98edaebf3fc60ee2b   default
+monitoring         Synced        Healthy         88.1.3                                     default
+namespaces         Synced        Healthy         a82d9d04262cbfc86aadd2b98edaebf3fc60ee2b   default
+network-policies   Synced        Healthy         a82d9d04262cbfc86aadd2b98edaebf3fc60ee2b   default
+platform           OutOfSync     Healthy         a82d9d04262cbfc86aadd2b98edaebf3fc60ee2b   default
+policies           Synced        Healthy         a82d9d04262cbfc86aadd2b98edaebf3fc60ee2b   default
+sealed-secrets     Synced        Healthy         2.19.1                                     default
+secrets            Synced        Healthy         a82d9d04262cbfc86aadd2b98edaebf3fc60ee2b   default
