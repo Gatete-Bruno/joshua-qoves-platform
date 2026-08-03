@@ -1,110 +1,110 @@
-NAMESPACE        NAME                                                         READY   STATUS      RESTARTS        AGE
-argocd           pod/argocd-application-controller-0                          1/1     Running     0               113m
-argocd           pod/argocd-applicationset-controller-8d6865b7f-rmwmf         1/1     Running     0               127m
-argocd           pod/argocd-dex-server-74bbf47cf6-l6dlm                       1/1     Running     0               127m
-argocd           pod/argocd-notifications-controller-84798f79-p827q           1/1     Running     0               127m
-argocd           pod/argocd-redis-79db4b8976-5c4d9                            1/1     Running     0               127m
-argocd           pod/argocd-repo-server-5fcf7766cd-2z9zt                      1/1     Running     0               127m
-argocd           pod/argocd-server-978b68fb7-b497m                            1/1     Running     0               127m
-cnpg-system      pod/cnpg-operator-cloudnative-pg-7ff8c9b597-dhgb4            1/1     Running     1 (2m25s ago)   103m
-ingress-nginx    pod/ingress-nginx-admission-create-wsdp6                     0/1     Completed   0               3h12m
-ingress-nginx    pod/ingress-nginx-admission-patch-rs6l7                      0/1     Completed   0               3h12m
-ingress-nginx    pod/ingress-nginx-controller-596f8778bc-wktjt                1/1     Running     0               3h12m
-kube-system      pod/cilium-8clnp                                             1/1     Running     0               3h17m
-kube-system      pod/cilium-9fkgn                                             1/1     Running     0               3h17m
-kube-system      pod/cilium-envoy-p9gfj                                       1/1     Running     0               3h17m
-kube-system      pod/cilium-envoy-wh55d                                       1/1     Running     0               3h17m
-kube-system      pod/cilium-operator-56f9c4bfff-fxktf                         1/1     Running     1 (2m25s ago)   3h17m
-kube-system      pod/coredns-7d764666f9-7zhpw                                 1/1     Running     0               3h2m
-kube-system      pod/csi-hostpath-attacher-0                                  1/1     Running     0               94m
-kube-system      pod/csi-hostpath-resizer-0                                   1/1     Running     0               94m
-kube-system      pod/csi-hostpathplugin-f65rp                                 6/6     Running     1 (2m26s ago)   94m
-kube-system      pod/csi-hostpathplugin-fkvr6                                 6/6     Running     0               94m
-kube-system      pod/etcd-minikube                                            1/1     Running     0               3h18m
-kube-system      pod/hubble-relay-5fcdfbb8b9-xnvkn                            1/1     Running     0               3h17m
-kube-system      pod/kube-apiserver-minikube                                  1/1     Running     0               3h18m
-kube-system      pod/kube-controller-manager-minikube                         1/1     Running     0               3h18m
-kube-system      pod/kube-proxy-nhmg4                                         1/1     Running     0               3h18m
-kube-system      pod/kube-proxy-nr7w8                                         1/1     Running     0               3h18m
-kube-system      pod/kube-scheduler-minikube                                  1/1     Running     0               3h18m
-kube-system      pod/metrics-server-9d74bb658-95nm4                           1/1     Running     0               170m
-kube-system      pod/snapshot-controller-6588d87457-5nsz7                     1/1     Running     0               94m
-kube-system      pod/snapshot-controller-6588d87457-jq8x7                     1/1     Running     0               94m
-kube-system      pod/storage-provisioner                                      1/1     Running     2 (2m26s ago)   3h18m
-kyverno          pod/kyverno-admission-controller-d9688bf46-zmhsc             1/1     Running     1 (2m24s ago)   18m
-kyverno          pod/kyverno-background-controller-7b54965bf9-n4p99           1/1     Running     1 (2m27s ago)   103m
-kyverno          pod/kyverno-cleanup-controller-59c8fdfb66-gtxsn              1/1     Running     1 (2m27s ago)   103m
-kyverno          pod/kyverno-migrate-resources-pnkp8                          0/1     Completed   0               52m
-kyverno          pod/kyverno-reports-controller-5c96886c9-g2q6m               1/1     Running     1 (2m26s ago)   103m
-monitoring       pod/alertmanager-monitoring-kube-prometheus-alertmanager-0   2/2     Running     0               96m
-monitoring       pod/monitoring-kube-prometheus-operator-6cd5dcf77f-s8xt5     1/1     Running     0               98m
-monitoring       pod/prometheus-monitoring-kube-prometheus-prometheus-0       2/2     Running     0               96m
-qoves-app        pod/qoves-api-694544794d-gvmts                               1/1     Running     0               103m
-qoves-app        pod/qoves-api-694544794d-xgnzl                               1/1     Running     0               103m
-qoves-app        pod/qoves-db-1                                               1/1     Running     1 (4m49s ago)   15m
-qoves-app        pod/qoves-db-2                                               1/1     Running     0               14m
-qoves-minio      pod/minio-7456ddcd89-pq29v                                   1/1     Running     0               82m
-qoves-minio      pod/minio-bucket-setup-lzsvm                                 0/1     Completed   0               63m
-sealed-secrets   pod/sealed-secrets-controller-74d5bcfff-xpdlk                1/1     Running     0               103m
+NAMESPACE        NAME                                                         READY   STATUS      RESTARTS      AGE
+argocd           pod/argocd-application-controller-0                          1/1     Running     0             3h15m
+argocd           pod/argocd-applicationset-controller-8d6865b7f-rmwmf         1/1     Running     0             3h30m
+argocd           pod/argocd-dex-server-74bbf47cf6-l6dlm                       1/1     Running     0             3h30m
+argocd           pod/argocd-notifications-controller-84798f79-p827q           1/1     Running     0             3h30m
+argocd           pod/argocd-redis-79db4b8976-5c4d9                            1/1     Running     0             3h30m
+argocd           pod/argocd-repo-server-5fcf7766cd-2z9zt                      1/1     Running     0             3h30m
+argocd           pod/argocd-server-978b68fb7-b497m                            1/1     Running     0             3h30m
+cnpg-system      pod/cnpg-operator-cloudnative-pg-7ff8c9b597-dhgb4            1/1     Running     6 (39m ago)   3h5m
+ingress-nginx    pod/ingress-nginx-admission-create-wsdp6                     0/1     Completed   0             4h35m
+ingress-nginx    pod/ingress-nginx-admission-patch-rs6l7                      0/1     Completed   0             4h35m
+ingress-nginx    pod/ingress-nginx-controller-596f8778bc-wktjt                1/1     Running     0             4h35m
+kube-system      pod/cilium-8clnp                                             1/1     Running     0             4h40m
+kube-system      pod/cilium-9fkgn                                             1/1     Running     0             4h40m
+kube-system      pod/cilium-envoy-p9gfj                                       1/1     Running     0             4h40m
+kube-system      pod/cilium-envoy-wh55d                                       1/1     Running     0             4h40m
+kube-system      pod/cilium-operator-56f9c4bfff-fxktf                         1/1     Running     8 (48s ago)   4h40m
+kube-system      pod/coredns-7d764666f9-7zhpw                                 1/1     Running     0             4h25m
+kube-system      pod/csi-hostpath-attacher-0                                  1/1     Running     0             176m
+kube-system      pod/csi-hostpath-resizer-0                                   1/1     Running     0             176m
+kube-system      pod/csi-hostpathplugin-f65rp                                 6/6     Running     2 (53m ago)   176m
+kube-system      pod/csi-hostpathplugin-fkvr6                                 6/6     Running     3 (38m ago)   176m
+kube-system      pod/etcd-minikube                                            1/1     Running     0             4h41m
+kube-system      pod/hubble-relay-5fcdfbb8b9-xnvkn                            1/1     Running     0             4h40m
+kube-system      pod/kube-apiserver-minikube                                  1/1     Running     0             4h41m
+kube-system      pod/kube-controller-manager-minikube                         1/1     Running     0             4h41m
+kube-system      pod/kube-proxy-nhmg4                                         1/1     Running     0             4h41m
+kube-system      pod/kube-proxy-nr7w8                                         1/1     Running     0             4h40m
+kube-system      pod/kube-scheduler-minikube                                  1/1     Running     0             4h41m
+kube-system      pod/metrics-server-9d74bb658-95nm4                           1/1     Running     0             4h13m
+kube-system      pod/snapshot-controller-6588d87457-5nsz7                     1/1     Running     1 (53m ago)   176m
+kube-system      pod/snapshot-controller-6588d87457-jq8x7                     1/1     Running     2 (38m ago)   176m
+kube-system      pod/storage-provisioner                                      1/1     Running     7 (40m ago)   4h41m
+kyverno          pod/kyverno-admission-controller-d9688bf46-zmhsc             1/1     Running     5 (38m ago)   100m
+kyverno          pod/kyverno-background-controller-7b54965bf9-n4p99           1/1     Running     8 (28m ago)   3h5m
+kyverno          pod/kyverno-cleanup-controller-59c8fdfb66-gtxsn              1/1     Running     6 (38m ago)   3h5m
+kyverno          pod/kyverno-migrate-resources-pnkp8                          0/1     Completed   0             135m
+kyverno          pod/kyverno-reports-controller-5c96886c9-g2q6m               1/1     Running     6 (38m ago)   3h5m
+monitoring       pod/alertmanager-monitoring-kube-prometheus-alertmanager-0   2/2     Running     0             179m
+monitoring       pod/monitoring-kube-prometheus-operator-6cd5dcf77f-s8xt5     1/1     Running     0             3h1m
+monitoring       pod/prometheus-monitoring-kube-prometheus-prometheus-0       2/2     Running     0             179m
+qoves-app        pod/qoves-api-75dfdffcb-49fjm                                1/1     Running     0             29m
+qoves-app        pod/qoves-api-75dfdffcb-vgmpr                                1/1     Running     0             75m
+qoves-app        pod/qoves-db-1                                               1/1     Running     0             20m
+qoves-app        pod/qoves-db-2                                               1/1     Running     0             35m
+qoves-minio      pod/minio-7456ddcd89-pq29v                                   1/1     Running     0             164m
+qoves-minio      pod/minio-bucket-setup-lzsvm                                 0/1     Completed   0             145m
+sealed-secrets   pod/sealed-secrets-controller-74d5bcfff-xpdlk                1/1     Running     0             3h5m
 
 NAMESPACE        NAME                                              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                        AGE
-argocd           service/argocd-applicationset-controller          ClusterIP   10.111.60.116    <none>        7000/TCP,8080/TCP              127m
-argocd           service/argocd-dex-server                         ClusterIP   10.105.244.190   <none>        5556/TCP,5557/TCP,5558/TCP     127m
-argocd           service/argocd-metrics                            ClusterIP   10.101.174.10    <none>        8082/TCP                       127m
-argocd           service/argocd-notifications-controller-metrics   ClusterIP   10.96.70.91      <none>        9001/TCP                       127m
-argocd           service/argocd-redis                              ClusterIP   10.99.184.95     <none>        6379/TCP                       127m
-argocd           service/argocd-repo-server                        ClusterIP   10.109.125.98    <none>        8081/TCP,8084/TCP              127m
-argocd           service/argocd-server                             ClusterIP   10.99.147.58     <none>        80/TCP,443/TCP                 127m
-argocd           service/argocd-server-metrics                     ClusterIP   10.98.224.134    <none>        8083/TCP                       127m
-cnpg-system      service/cnpg-webhook-service                      ClusterIP   10.103.3.137     <none>        443/TCP                        103m
-default          service/kubernetes                                ClusterIP   10.96.0.1        <none>        443/TCP                        3h18m
-ingress-nginx    service/ingress-nginx-controller                  NodePort    10.107.27.4      <none>        80:30588/TCP,443:32411/TCP     3h12m
-ingress-nginx    service/ingress-nginx-controller-admission        ClusterIP   10.106.151.212   <none>        443/TCP                        3h12m
-kube-system      service/cilium-envoy                              ClusterIP   None             <none>        9964/TCP                       3h17m
-kube-system      service/csi-hostpath-attacher                     ClusterIP   10.96.227.97     <none>        12345/TCP                      94m
-kube-system      service/csi-hostpath-resizer                      ClusterIP   10.102.152.25    <none>        12345/TCP                      94m
-kube-system      service/hubble-peer                               ClusterIP   10.110.241.134   <none>        443/TCP                        3h17m
-kube-system      service/hubble-relay                              ClusterIP   10.96.12.213     <none>        80/TCP                         3h17m
-kube-system      service/kube-dns                                  ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP         3h18m
-kube-system      service/metrics-server                            ClusterIP   10.98.6.248      <none>        443/TCP                        170m
-kube-system      service/monitoring-kube-prometheus-kubelet        ClusterIP   None             <none>        10250/TCP,4194/TCP,10255/TCP   96m
-kyverno          service/kyverno-background-controller-metrics     ClusterIP   10.99.43.24      <none>        8000/TCP                       103m
-kyverno          service/kyverno-cleanup-controller                ClusterIP   10.99.138.74     <none>        443/TCP                        103m
-kyverno          service/kyverno-cleanup-controller-metrics        ClusterIP   10.102.34.65     <none>        8000/TCP                       103m
-kyverno          service/kyverno-reports-controller-metrics        ClusterIP   10.106.101.104   <none>        8000/TCP                       103m
-kyverno          service/kyverno-svc                               ClusterIP   10.109.84.113    <none>        443/TCP                        103m
-kyverno          service/kyverno-svc-metrics                       ClusterIP   10.111.223.82    <none>        8000/TCP                       103m
-monitoring       service/alertmanager-operated                     ClusterIP   None             <none>        9093/TCP,9094/TCP,9094/UDP     96m
-monitoring       service/monitoring-kube-prometheus-alertmanager   ClusterIP   10.99.77.8       <none>        9093/TCP,8080/TCP              98m
-monitoring       service/monitoring-kube-prometheus-operator       ClusterIP   10.111.82.83     <none>        443/TCP                        98m
-monitoring       service/monitoring-kube-prometheus-prometheus     ClusterIP   10.98.220.104    <none>        9090/TCP,8080/TCP              98m
-monitoring       service/prometheus-operated                       ClusterIP   None             <none>        9090/TCP                       96m
-qoves-app        service/qoves-api                                 ClusterIP   10.109.155.14    <none>        8080/TCP                       103m
-qoves-app        service/qoves-db-r                                ClusterIP   10.111.62.132    <none>        5432/TCP                       87m
-qoves-app        service/qoves-db-ro                               ClusterIP   10.99.65.94      <none>        5432/TCP                       87m
-qoves-app        service/qoves-db-rw                               ClusterIP   10.104.162.68    <none>        5432/TCP                       87m
-qoves-minio      service/minio                                     ClusterIP   10.97.34.71      <none>        9000/TCP                       103m
-sealed-secrets   service/sealed-secrets-controller                 ClusterIP   10.108.185.129   <none>        8080/TCP                       103m
-sealed-secrets   service/sealed-secrets-controller-metrics         ClusterIP   10.96.40.5       <none>        8081/TCP                       103m
+argocd           service/argocd-applicationset-controller          ClusterIP   10.111.60.116    <none>        7000/TCP,8080/TCP              3h30m
+argocd           service/argocd-dex-server                         ClusterIP   10.105.244.190   <none>        5556/TCP,5557/TCP,5558/TCP     3h30m
+argocd           service/argocd-metrics                            ClusterIP   10.101.174.10    <none>        8082/TCP                       3h30m
+argocd           service/argocd-notifications-controller-metrics   ClusterIP   10.96.70.91      <none>        9001/TCP                       3h30m
+argocd           service/argocd-redis                              ClusterIP   10.99.184.95     <none>        6379/TCP                       3h30m
+argocd           service/argocd-repo-server                        ClusterIP   10.109.125.98    <none>        8081/TCP,8084/TCP              3h30m
+argocd           service/argocd-server                             ClusterIP   10.99.147.58     <none>        80/TCP,443/TCP                 3h30m
+argocd           service/argocd-server-metrics                     ClusterIP   10.98.224.134    <none>        8083/TCP                       3h30m
+cnpg-system      service/cnpg-webhook-service                      ClusterIP   10.103.3.137     <none>        443/TCP                        3h5m
+default          service/kubernetes                                ClusterIP   10.96.0.1        <none>        443/TCP                        4h41m
+ingress-nginx    service/ingress-nginx-controller                  NodePort    10.107.27.4      <none>        80:30588/TCP,443:32411/TCP     4h35m
+ingress-nginx    service/ingress-nginx-controller-admission        ClusterIP   10.106.151.212   <none>        443/TCP                        4h35m
+kube-system      service/cilium-envoy                              ClusterIP   None             <none>        9964/TCP                       4h40m
+kube-system      service/csi-hostpath-attacher                     ClusterIP   10.96.227.97     <none>        12345/TCP                      176m
+kube-system      service/csi-hostpath-resizer                      ClusterIP   10.102.152.25    <none>        12345/TCP                      176m
+kube-system      service/hubble-peer                               ClusterIP   10.110.241.134   <none>        443/TCP                        4h40m
+kube-system      service/hubble-relay                              ClusterIP   10.96.12.213     <none>        80/TCP                         4h40m
+kube-system      service/kube-dns                                  ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP,9153/TCP         4h41m
+kube-system      service/metrics-server                            ClusterIP   10.98.6.248      <none>        443/TCP                        4h13m
+kube-system      service/monitoring-kube-prometheus-kubelet        ClusterIP   None             <none>        10250/TCP,4194/TCP,10255/TCP   179m
+kyverno          service/kyverno-background-controller-metrics     ClusterIP   10.99.43.24      <none>        8000/TCP                       3h5m
+kyverno          service/kyverno-cleanup-controller                ClusterIP   10.99.138.74     <none>        443/TCP                        3h5m
+kyverno          service/kyverno-cleanup-controller-metrics        ClusterIP   10.102.34.65     <none>        8000/TCP                       3h5m
+kyverno          service/kyverno-reports-controller-metrics        ClusterIP   10.106.101.104   <none>        8000/TCP                       3h5m
+kyverno          service/kyverno-svc                               ClusterIP   10.109.84.113    <none>        443/TCP                        3h5m
+kyverno          service/kyverno-svc-metrics                       ClusterIP   10.111.223.82    <none>        8000/TCP                       3h5m
+monitoring       service/alertmanager-operated                     ClusterIP   None             <none>        9093/TCP,9094/TCP,9094/UDP     179m
+monitoring       service/monitoring-kube-prometheus-alertmanager   ClusterIP   10.99.77.8       <none>        9093/TCP,8080/TCP              3h1m
+monitoring       service/monitoring-kube-prometheus-operator       ClusterIP   10.111.82.83     <none>        443/TCP                        3h1m
+monitoring       service/monitoring-kube-prometheus-prometheus     ClusterIP   10.98.220.104    <none>        9090/TCP,8080/TCP              3h1m
+monitoring       service/prometheus-operated                       ClusterIP   None             <none>        9090/TCP                       179m
+qoves-app        service/qoves-api                                 ClusterIP   10.109.155.14    <none>        8080/TCP                       3h5m
+qoves-app        service/qoves-db-r                                ClusterIP   10.111.62.132    <none>        5432/TCP                       169m
+qoves-app        service/qoves-db-ro                               ClusterIP   10.99.65.94      <none>        5432/TCP                       169m
+qoves-app        service/qoves-db-rw                               ClusterIP   10.104.162.68    <none>        5432/TCP                       169m
+qoves-minio      service/minio                                     ClusterIP   10.97.34.71      <none>        9000/TCP                       3h5m
+sealed-secrets   service/sealed-secrets-controller                 ClusterIP   10.108.185.129   <none>        8080/TCP                       3h5m
+sealed-secrets   service/sealed-secrets-controller-metrics         ClusterIP   10.96.40.5       <none>        8081/TCP                       3h5m
 
 NAMESPACE   NAME                                  CLASS   HOSTS         ADDRESS        PORTS   AGE
-qoves-app   ingress.networking.k8s.io/qoves-api   nginx   qoves.local   192.168.49.2   80      103m
+qoves-app   ingress.networking.k8s.io/qoves-api   nginx   qoves.local   192.168.49.2   80      3h5m
 
 NAMESPACE   NAME                                                                              POD-SELECTOR                                              AGE
-argocd      networkpolicy.networking.k8s.io/argocd-application-controller-network-policy      app.kubernetes.io/name=argocd-application-controller      127m
-argocd      networkpolicy.networking.k8s.io/argocd-applicationset-controller-network-policy   app.kubernetes.io/name=argocd-applicationset-controller   127m
-argocd      networkpolicy.networking.k8s.io/argocd-dex-server-network-policy                  app.kubernetes.io/name=argocd-dex-server                  127m
-argocd      networkpolicy.networking.k8s.io/argocd-notifications-controller-network-policy    app.kubernetes.io/name=argocd-notifications-controller    127m
-argocd      networkpolicy.networking.k8s.io/argocd-redis-network-policy                       app.kubernetes.io/name=argocd-redis                       127m
-argocd      networkpolicy.networking.k8s.io/argocd-repo-server-network-policy                 app.kubernetes.io/name=argocd-repo-server                 127m
-argocd      networkpolicy.networking.k8s.io/argocd-server-network-policy                      app.kubernetes.io/name=argocd-server                      127m
-qoves-app   networkpolicy.networking.k8s.io/allow-dns                                         app notin (qoves-api)                                     103m
-qoves-app   networkpolicy.networking.k8s.io/api-egress-db                                     app=qoves-api                                             103m
-qoves-app   networkpolicy.networking.k8s.io/api-ingress                                       app=qoves-api                                             103m
-qoves-app   networkpolicy.networking.k8s.io/db-egress                                         cnpg.io/cluster=qoves-db                                  103m
-qoves-app   networkpolicy.networking.k8s.io/db-ingress                                        cnpg.io/cluster=qoves-db                                  103m
-qoves-app   networkpolicy.networking.k8s.io/default-deny                                      <none>                                                    103m
+argocd      networkpolicy.networking.k8s.io/argocd-application-controller-network-policy      app.kubernetes.io/name=argocd-application-controller      3h30m
+argocd      networkpolicy.networking.k8s.io/argocd-applicationset-controller-network-policy   app.kubernetes.io/name=argocd-applicationset-controller   3h30m
+argocd      networkpolicy.networking.k8s.io/argocd-dex-server-network-policy                  app.kubernetes.io/name=argocd-dex-server                  3h30m
+argocd      networkpolicy.networking.k8s.io/argocd-notifications-controller-network-policy    app.kubernetes.io/name=argocd-notifications-controller    3h30m
+argocd      networkpolicy.networking.k8s.io/argocd-redis-network-policy                       app.kubernetes.io/name=argocd-redis                       3h30m
+argocd      networkpolicy.networking.k8s.io/argocd-repo-server-network-policy                 app.kubernetes.io/name=argocd-repo-server                 3h30m
+argocd      networkpolicy.networking.k8s.io/argocd-server-network-policy                      app.kubernetes.io/name=argocd-server                      3h30m
+qoves-app   networkpolicy.networking.k8s.io/allow-dns                                         app notin (qoves-api)                                     3h6m
+qoves-app   networkpolicy.networking.k8s.io/api-egress-db                                     app=qoves-api                                             3h6m
+qoves-app   networkpolicy.networking.k8s.io/api-ingress                                       app=qoves-api                                             3h6m
+qoves-app   networkpolicy.networking.k8s.io/db-egress                                         cnpg.io/cluster                                           3h6m
+qoves-app   networkpolicy.networking.k8s.io/db-ingress                                        cnpg.io/cluster                                           3h6m
+qoves-app   networkpolicy.networking.k8s.io/default-deny                                      <none>                                                    3h6m
 
 NAMESPACE   NAME                  AGE    VALID
-qoves-app   api-egress-fqdn       103m   True
-qoves-app   db-egress-apiserver   103m   True
+qoves-app   api-egress-fqdn       3h6m   True
+qoves-app   db-egress-apiserver   3h6m   True

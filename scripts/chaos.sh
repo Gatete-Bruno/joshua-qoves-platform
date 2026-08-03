@@ -26,6 +26,6 @@ NP=$(kubectl -n ingress-nginx get svc ingress-nginx-controller -o jsonpath='{.sp
   echo
   kubectl -n qoves-app get cluster qoves-db -o jsonpath='{.status.currentPrimary}{"\n"}'
   kubectl -n qoves-app get events --sort-by=.lastTimestamp | grep -iE "qoves-db|failover|promot" | tail -12
-} > "$OUT/10-chaos-primary-kill.txt" 2>&1
+} > "$OUT/14-chaos-primary-kill.txt" 2>&1
 
-cat "$OUT/10-chaos-primary-kill.txt"
+cat "$OUT/14-chaos-primary-kill.txt"

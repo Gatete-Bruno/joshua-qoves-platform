@@ -82,7 +82,7 @@ won for two reasons. Failover: with two instances, killing the primary is a
 promotion, not an outage that waits for a human. The chaos drill measured
 it: under two requests per second through the ingress, deleting the primary
 produced roughly 38 seconds of 503s before the replica took over and traffic
-went clean, with no manual action (`docs/proof/10-chaos-primary-kill.txt`).
+went clean, with no manual action (`docs/proof/14-chaos-primary-kill.txt`).
 Backups: `barmanObjectStore` plus a ScheduledBackup gives WAL archiving and
 a `bootstrap.recovery` restore path I could drill through git. Two caveats
 I hit in practice rather than in docs. In-tree Barman is deprecated from
@@ -225,7 +225,10 @@ through the ingress while `/` still answers.
    `./scripts/restore-drill.sh` commits a `bootstrap.recovery` cluster
    that reads the barman archive from MinIO, waits for it to come up, and
    verifies the data (`docs/proof/12-restore-drill.txt` is a rehearsal of
-   exactly this). Point the app at the restored cluster by updating the
+   exactly this). The rehearsal earned its keep, too: the first attempt sat
+   blocked because every DB netpol selected `cnpg.io/cluster: qoves-db` by
+   name, so a restored cluster with a different name had no path to the API
+   server. Untested restores aren't backups. Point the app at the restored cluster by updating the
    sealed `DATABASE_URL` and the service name, commit, let Argo sync.
 4. Confirm like a user would: `curl -H 'Host: qoves.local'` against the
    ingress returns 200, the alert resolves, and `kubectl -n qoves-app get
