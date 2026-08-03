@@ -1,6 +1,76 @@
-# PromQL: up{namespace="qoves-app"}  and the alert rule state
-OCI runtime exec failed: exec failed: unable to start container process: exec: "wget": executable file not found in $PATH
-command terminated with exit code 127
+# up{namespace="qoves-app"} via prometheus API
+{
+    "status": "success",
+    "data": {
+        "resultType": "vector",
+        "result": [
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "api",
+                    "endpoint": "http",
+                    "instance": "10.0.0.84:8080",
+                    "job": "qoves-api",
+                    "namespace": "qoves-app",
+                    "pod": "qoves-api-75dfdffcb-vgmpr",
+                    "service": "qoves-api"
+                },
+                "value": [
+                    1785775534.266,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
+                    "container": "api",
+                    "endpoint": "http",
+                    "instance": "10.0.1.250:8080",
+                    "job": "qoves-api",
+                    "namespace": "qoves-app",
+                    "pod": "qoves-api-75dfdffcb-djqtm",
+                    "service": "qoves-api"
+                },
+                "value": [
+                    1785775534.266,
+                    "1"
+                ]
+            },
+            {
+                "metric": {
+                    "__name__": "up",
 
-command terminated with exit code 127
-OCI runtime exec failed: exec failed: unable to start container process: exec: "wget": executable file not found in $PATH
+# alert rules
+{
+ "state": "firing",
+ "name": "ApiDatabaseUnreachable",
+ "query": "sum(rate(http_requests_total{path=\"/healthz\",status=\"503\"}[5m])) > 0",
+ "duration": 300,
+ "keepFiringFor": 0,
+ "labels": {
+  "severity": "critical"
+ },
+ "annotations": {
+  "description": "Readiness probes have been receiving 503 from /healthz for 5 minutes, which means every affected replica failed SELECT 1 against the database. Users are already being shed at the ingress. Check the qoves-db cluster, its PVCs, and the network policies between api and db.",
+  "summary": "qoves-api cannot reach Postgres"
+ },
+ "alerts": [
+  {
+   "labels": {
+    "alertname": "ApiDatabaseUnreachable",
+    "severity": "critical"
+   },
+   "annotations": {
+    "description": "Readiness probes have been receiving 503 from /healthz for 5 minutes, which means every affected replica failed SELECT 1 against the database. Users are already being shed at the ingress. Check the qoves-db cluster, its PVCs, and the network policies between api and db.",
+    "summary": "qoves-api cannot reach Postgres"
+   },
+   "state": "firing",
+   "activeAt": "2026-08-03T16:15:19.533166795Z",
+   "value": "9.093582768507031e-01"
+  }
+ ],
+ "health": "ok",
+ "evaluationTime": 0.17389289,
+ "lastEvaluation": "2026-08-03T16:45:19.006429691Z",
+ "type": "alerting"
+}

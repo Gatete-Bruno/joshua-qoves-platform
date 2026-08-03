@@ -1,0 +1,12 @@
+== multi-cluster: consumer on qoves-edge privately calling cluster-1 API via ingress ==
+edge-consumer   Synced   Healthy
+pod/healthz-consumer-6c7dc89b65-l7c5z   1/1   Running   0     4m15s
+networkpolicy.networking.k8s.io/consumer-egress-api   app=healthz-consumer   4m15s
+networkpolicy.networking.k8s.io/default-deny          <none>                 4m15s
+
+2026-08-03T16:58:28+00:00 GET /healthz -> 200
+2026-08-03T16:58:39+00:00 GET /healthz -> 200
+2026-08-03T16:58:49+00:00 GET /healthz -> 200
+2026-08-03T16:58:59+00:00 GET /healthz -> 200
+2026-08-03T16:59:09+00:00 GET /healthz -> 200
+2026-08-03T16:59:19+00:00 GET /healthz -> 200

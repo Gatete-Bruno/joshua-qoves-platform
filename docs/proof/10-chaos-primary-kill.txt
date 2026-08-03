@@ -1,0 +1,29 @@
+== chaos: kill the Postgres primary while /healthz is under load ==
+primary before: qoves-db-1
+pod "qoves-db-1" deleted from qoves-app namespace
+deleted qoves-db-1 at 16:46:59.376
+
+== status codes over time (503s mark the failover window) ==
+     19 200
+      7 503
+      1 000
+     70 503
+     90 200
+      1 000
+     37 200
+      1 000
+     14 200
+
+qoves-db-2
+2m8s        Normal    Pulled                         pod/qoves-db-1                         Container image "ghcr.io/cloudnative-pg/cloudnative-pg:1.30.0" already present on machine and can be accessed by the pod
+2m7s        Normal    Created                        pod/qoves-db-1                         Container created
+2m7s        Normal    Started                        pod/qoves-db-1                         Container started
+2m1s        Normal    Pulled                         pod/qoves-db-1                         Container image "registry:5000/postgresql:18.4@sha256:cad808790906aa770e1cd27100f1165703b91d5c1fb198ef1a94d719f5ceb942" already present on machine and can be accessed by the pod
+2m1s        Normal    Created                        pod/qoves-db-1                         Container created
+2m1s        Normal    Started                        pod/qoves-db-1                         Container started
+57s         Warning   Unhealthy                      pod/qoves-db-2                         Readiness probe failed: Get "https://10.0.1.37:8000/readyz": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+45s         Warning   Unhealthy                      pod/qoves-db-1                         Startup probe failed: HTTP probe failed with statuscode: 500
+18s         Warning   Unhealthy                      pod/qoves-db-2                         Liveness probe failed: HTTP probe failed with statuscode: 500
+17s         Warning   Unhealthy                      pod/qoves-db-2                         Readiness probe failed: Get "https://10.0.1.37:8000/readyz": context deadline exceeded
+11s         Warning   Unhealthy                      pod/qoves-db-1                         Liveness probe failed: Get "https://10.0.0.46:8000/healthz": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+10s         Warning   Unhealthy                      pod/qoves-db-1                         Readiness probe failed: Get "https://10.0.0.46:8000/readyz": context deadline exceeded

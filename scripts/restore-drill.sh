@@ -7,7 +7,7 @@ mkdir -p "$OUT"
 cp manifests/database/restore/cluster-restored.yaml manifests/database/cluster-restored.yaml
 git add manifests/database/cluster-restored.yaml
 git commit -m "restore drill: recover qoves-db from object storage as qoves-db-restored"
-git push
+git push origin main
 
 echo "waiting for Argo CD to sync and the restored cluster to come up..."
 kubectl -n qoves-app wait cluster/qoves-db-restored \
@@ -22,4 +22,4 @@ cat "$OUT/11-restore-drill.txt"
 
 git rm -q manifests/database/cluster-restored.yaml
 git commit -m "restore drill: verified, remove restored cluster"
-git push
+git push origin main
