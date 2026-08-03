@@ -27,7 +27,7 @@ spec:
       kind: CustomResourceDefinition
       jqPathExpressions:
         - .spec.conversion.webhook.clientConfig.caBundle
-        - .metadata.labels | select(length == 0)
+        - .metadata.labels
   syncPolicy:
     automated:
       prune: true
