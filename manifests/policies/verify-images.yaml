@@ -39,16 +39,20 @@ spec:
               kinds: ["Pod"]
               namespaces: ["qoves-app"]
       verifyImages:
-        - type: SigstoreBundle
-          imageReferences:
-            - "ghcr.io/cloudnative-pg/postgresql*"
+        - imageReferences:
+            - "registry:5000/postgresql*"
           failureAction: Enforce
           mutateDigest: false
           verifyDigest: false
           attestors:
             - entries:
-                - keyless:
-                    issuer: https://token.actions.githubusercontent.com
-                    subjectRegExp: https://github\.com/cloudnative-pg/postgres-containers/\.github/workflows/.+
+                - keys:
+                    publicKeys: |-
+                      -----BEGIN PUBLIC KEY-----
+                      MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQfgZ0sTYSki8UI/toiWA3R4kvtZ/
+                      /PL9/h/HsQ84sINqWFdEgyZV+rpJ6K+c67oiU4Mh8XOhArTK3eeosbXQlQ==
+                      -----END PUBLIC KEY-----
                     rekor:
-                      url: https://rekor.sigstore.dev
+                      ignoreTlog: true
+                    ctlog:
+                      ignoreSCT: true
