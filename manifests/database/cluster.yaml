@@ -15,6 +15,7 @@ spec:
         name: db-app-auth
   storage:
     size: 1Gi
+    storageClass: csi-hostpath-sc
   resources:
     requests:
       cpu: 100m

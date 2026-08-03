@@ -4,6 +4,7 @@ metadata:
   name: minio-data
   namespace: qoves-minio
 spec:
+  storageClassName: csi-hostpath-sc
   accessModes:
     - ReadWriteOnce
   resources:

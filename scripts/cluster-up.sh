@@ -13,5 +13,7 @@ cilium status --wait --wait-duration 15m
 
 minikube addons enable ingress
 minikube addons enable metrics-server
+minikube addons enable volumesnapshots
+minikube addons enable csi-hostpath-driver
 
 kubectl get nodes -o wide
