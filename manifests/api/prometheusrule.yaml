@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: qoves-api
+  labels:
+    app: qoves-api
+spec:
+  groups:
+    - name: qoves-api
+      rules:
+        - alert: ApiDatabaseUnreachable
+          expr: sum(rate(http_requests_total{path="/healthz",status="503"}[5m])) > 0
+          for: 5m
+          labels:
+            severity: critical
+          annotations:
+            summary: qoves-api cannot reach Postgres
+            description: >-
+              Readiness probes have been receiving 503 from /healthz for 5
+              minutes, which means every affected replica failed SELECT 1
+              against the database. Users are already being shed at the
+              ingress. Check the qoves-db cluster, its PVCs, and the
+              network policies between api and db.

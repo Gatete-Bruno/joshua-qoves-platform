@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthz-consumer
+  namespace: qoves-edge
+  labels:
+    app: healthz-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthz-consumer
+  template:
+    metadata:
+      labels:
+        app: healthz-consumer
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      hostAliases:
+        - ip: 192.168.49.2
+          hostnames:
+            - qoves.local
+      containers:
+        - name: consumer
+          image: curlimages/curl:8.16.0
+          command:
+            - /bin/sh
+            - -c
+            - |
+              while true; do
+                code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 http://qoves.local/healthz)
+                echo "$(date -Iseconds) GET /healthz -> $code"
+                sleep 10
+              done
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
+            limits:
+              memory: 32Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]

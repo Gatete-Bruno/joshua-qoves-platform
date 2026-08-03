@@ -1,0 +1,52 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-signed-images
+spec:
+  background: false
+  webhookConfiguration:
+    failurePolicy: Fail
+  rules:
+    - name: qoves-api-signed
+      match:
+        any:
+          - resources:
+              kinds: ["Pod"]
+              namespaces: ["qoves-app"]
+      verifyImages:
+        - imageReferences:
+            - "registry:5000/qoves-api*"
+            - "ghcr.io/*/qoves-api*"
+          failureAction: Enforce
+          mutateDigest: true
+          verifyDigest: false
+          attestors:
+            - entries:
+                - keys:
+                    publicKeys: |-
+                      -----BEGIN PUBLIC KEY-----
+                      MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQfgZ0sTYSki8UI/toiWA3R4kvtZ/
+                      /PL9/h/HsQ84sINqWFdEgyZV+rpJ6K+c67oiU4Mh8XOhArTK3eeosbXQlQ==
+                      -----END PUBLIC KEY-----
+                    rekor:
+                      ignoreTlog: true
+                    ctlog:
+                      ignoreSCT: true
+    - name: cnpg-postgres-signed
+      match:
+        any:
+          - resources:
+              kinds: ["Pod"]
+              namespaces: ["qoves-app"]
+      verifyImages:
+        - type: SigstoreBundle
+          imageReferences:
+            - "ghcr.io/cloudnative-pg/postgresql*"
+          failureAction: Enforce
+          mutateDigest: false
+          verifyDigest: false
+          attestors:
+            - entries:
+                - keyless:
+                    issuer: https://token.actions.githubusercontent.com
+                    subject: https://github.com/cloudnative-pg/postgres-containers/.github/workflows/*

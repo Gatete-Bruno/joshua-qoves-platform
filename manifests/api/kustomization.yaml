@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: qoves-app
+resources:
+  - deployment.yaml
+  - service.yaml
+  - hpa.yaml
+  - pdb.yaml
+  - ingress.yaml
+  - servicemonitor.yaml
+  - prometheusrule.yaml
+images:
+  - name: qoves-api
+    newName: registry:5000/qoves-api
+    digest: sha256:da618cad2c3be7604e6ba28874ad16a4e74d0c78f02e8e915714f60d8297783f

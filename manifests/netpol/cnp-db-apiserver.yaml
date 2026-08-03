@@ -1,0 +1,12 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: db-egress-apiserver
+  namespace: qoves-app
+spec:
+  endpointSelector:
+    matchLabels:
+      cnpg.io/cluster: qoves-db
+  egress:
+    - toEntities:
+        - kube-apiserver

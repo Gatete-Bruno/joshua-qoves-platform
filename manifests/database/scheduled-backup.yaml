@@ -1,0 +1,10 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: ScheduledBackup
+metadata:
+  name: qoves-db-daily
+  namespace: qoves-app
+spec:
+  schedule: "0 0 2 * * *"
+  cluster:
+    name: qoves-db
+  immediate: true

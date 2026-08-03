@@ -1,0 +1,40 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: qoves-db
+  namespace: qoves-app
+spec:
+  instances: 2
+  imageName: ghcr.io/cloudnative-pg/postgresql:18.4-standard-trixie@sha256:f0cc49632b5cc1e51f65ba03658c89bd31d64ea2672b14843a808a8d281417e1
+  primaryUpdateStrategy: unsupervised
+  bootstrap:
+    initdb:
+      database: qoves
+      owner: qoves
+      secret:
+        name: db-app-auth
+  storage:
+    size: 1Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+  monitoring:
+    enablePodMonitor: true
+  backup:
+    barmanObjectStore:
+      destinationPath: s3://qoves-backups/qoves-db
+      endpointURL: http://minio.qoves-minio.svc.cluster.local:9000
+      s3Credentials:
+        accessKeyId:
+          name: db-backup-s3
+          key: ACCESS_KEY_ID
+        secretAccessKey:
+          name: db-backup-s3
+          key: SECRET_ACCESS_KEY
+      wal:
+        compression: gzip
+    retentionPolicy: 7d
