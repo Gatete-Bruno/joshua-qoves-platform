@@ -11,7 +11,7 @@ DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' "$PUSH_REF:$TAG" | c
 echo "digest: $DIGEST"
 
 COSIGN_PASSWORD="${COSIGN_PASSWORD:-}" cosign sign --yes --key cosign.key \
-  --allow-http-registry --use-signing-config=false --tlog-upload=false "$CLUSTER_REF@$DIGEST"
+  --allow-http-registry --new-bundle-format=false --use-signing-config=false --tlog-upload=false "$CLUSTER_REF@$DIGEST"
 
 cd manifests/api
 kustomize edit set image "qoves-api=$CLUSTER_REF@$DIGEST" 2>/dev/null || {
