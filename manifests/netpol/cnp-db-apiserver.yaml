@@ -5,8 +5,9 @@ metadata:
   namespace: qoves-app
 spec:
   endpointSelector:
-    matchLabels:
-      cnpg.io/cluster: qoves-db
+    matchExpressions:
+      - key: cnpg.io/cluster
+        operator: Exists
   egress:
     - toEntities:
         - kube-apiserver

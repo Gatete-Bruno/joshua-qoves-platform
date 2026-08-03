@@ -5,15 +5,17 @@ metadata:
   namespace: qoves-app
 spec:
   podSelector:
-    matchLabels:
-      cnpg.io/cluster: qoves-db
+    matchExpressions:
+      - key: cnpg.io/cluster
+        operator: Exists
   policyTypes:
     - Egress
   egress:
     - to:
         - podSelector:
-            matchLabels:
-              cnpg.io/cluster: qoves-db
+            matchExpressions:
+              - key: cnpg.io/cluster
+                operator: Exists
       ports:
         - port: 5432
           protocol: TCP

@@ -5,8 +5,9 @@ metadata:
   namespace: qoves-app
 spec:
   podSelector:
-    matchLabels:
-      cnpg.io/cluster: qoves-db
+    matchExpressions:
+      - key: cnpg.io/cluster
+        operator: Exists
   policyTypes:
     - Ingress
   ingress:
@@ -15,8 +16,9 @@ spec:
             matchLabels:
               app: qoves-api
         - podSelector:
-            matchLabels:
-              cnpg.io/cluster: qoves-db
+            matchExpressions:
+              - key: cnpg.io/cluster
+                operator: Exists
       ports:
         - port: 5432
           protocol: TCP
@@ -25,8 +27,9 @@ spec:
             matchLabels:
               kubernetes.io/metadata.name: cnpg-system
         - podSelector:
-            matchLabels:
-              cnpg.io/cluster: qoves-db
+            matchExpressions:
+              - key: cnpg.io/cluster
+                operator: Exists
       ports:
         - port: 8000
           protocol: TCP
