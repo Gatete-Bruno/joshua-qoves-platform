@@ -5,7 +5,7 @@ metadata:
   labels:
     app: qoves-api
 spec:
-  replicas: 2
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 1
