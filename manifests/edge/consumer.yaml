@@ -33,7 +33,7 @@ spec:
             - -c
             - |
               while true; do
-                code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 http://qoves.local/healthz)
+                code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 http://qoves.local:30588/healthz)
                 echo "$(date -Iseconds) GET /healthz -> $code"
                 sleep 10
               done
