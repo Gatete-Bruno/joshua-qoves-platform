@@ -1,14 +1,14 @@
 NAME               SYNC STATUS   HEALTH STATUS   REVISION                                   PROJECT
-api                Synced        Healthy         425622d8367750e41d548050393bf5e981b7de07   default
+api                Synced        Healthy         12cddc88e96f7d607c655e8ae919eb187b6f726f   default
 cnpg-operator      Synced        Healthy         0.29.0                                     default
-database           Synced        Healthy         8d7a6dd361bd593a8ba4dd687f7bab8c2fafe5be   default
-edge-consumer      Synced        Healthy         425622d8367750e41d548050393bf5e981b7de07   default
-kyverno            OutOfSync     Healthy         3.8.2                                      default
-minio              Synced        Healthy         425622d8367750e41d548050393bf5e981b7de07   default
+database           Synced        Healthy         12cddc88e96f7d607c655e8ae919eb187b6f726f   default
+edge-consumer      Synced        Healthy         e095ccc6c7c04a74a5dedb91c91d23abda37df2f   default
+kyverno            Synced        Healthy         3.8.2                                      default
+minio              Synced        Healthy         12cddc88e96f7d607c655e8ae919eb187b6f726f   default
 monitoring         Synced        Healthy         88.1.3                                     default
-namespaces         Synced        Healthy         425622d8367750e41d548050393bf5e981b7de07   default
-network-policies   Synced        Healthy         425622d8367750e41d548050393bf5e981b7de07   default
-platform           OutOfSync     Healthy         425622d8367750e41d548050393bf5e981b7de07   default
-policies           Synced        Healthy         425622d8367750e41d548050393bf5e981b7de07   default
+namespaces         Synced        Healthy         12cddc88e96f7d607c655e8ae919eb187b6f726f   default
+network-policies   Synced        Healthy         12cddc88e96f7d607c655e8ae919eb187b6f726f   default
+platform           Synced        Healthy         12cddc88e96f7d607c655e8ae919eb187b6f726f   default
+policies           Synced        Healthy         12cddc88e96f7d607c655e8ae919eb187b6f726f   default
 sealed-secrets     Synced        Healthy         2.19.1                                     default
-secrets            Synced        Healthy         425622d8367750e41d548050393bf5e981b7de07   default
+secrets            Synced        Healthy         e095ccc6c7c04a74a5dedb91c91d23abda37df2f   default

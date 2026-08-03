@@ -1,6 +1,4 @@
 # unrelated pod -> postgres:5432 (expect DENIED by default-deny)
-All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
-If you don't see a command prompt, try pressing enter.
 BLOCKED
 pod "netpol-test" deleted from qoves-app namespace
 
@@ -8,3 +6,9 @@ pod "netpol-test" deleted from qoves-app namespace
 200
 # api pod -> https://example.com (expect blocked)
 BLOCKED: URLError <urlopen error timed out>
+
+# hubble flow verdicts (policy enforcement observed at the dataplane)
+Aug  3 17:49:30.392: qoves-app/netpol-test:39323 (ID:39736) <> qoves-app/qoves-db-2:5432 (ID:1355) policy-verdict:none TRAFFIC_DIRECTION_UNKNOWN DENIED (TCP Flags: SYN)
+Aug  3 17:49:30.392: qoves-app/netpol-test:39323 (ID:39736) <> qoves-app/qoves-db-2:5432 (ID:1355) Policy denied DROPPED (TCP Flags: SYN)
+Aug  3 17:49:31.415: qoves-app/netpol-test:39323 (ID:39736) <> qoves-app/qoves-db-2:5432 (ID:1355) policy-verdict:none TRAFFIC_DIRECTION_UNKNOWN DENIED (TCP Flags: SYN)
+Aug  3 17:49:31.415: qoves-app/netpol-test:39323 (ID:39736) <> qoves-app/qoves-db-2:5432 (ID:1355) Policy denied DROPPED (TCP Flags: SYN)
