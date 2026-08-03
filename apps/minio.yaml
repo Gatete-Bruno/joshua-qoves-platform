@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: http://host.minikube.internal:9080/platform.git
+    repoURL: https://github.com/Kolawole-Ikeoluwa-Joshua/qoves-platform.git
     targetRevision: main
     path: manifests/minio
   destination:
