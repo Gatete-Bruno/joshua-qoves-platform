@@ -50,3 +50,5 @@ spec:
                 - keyless:
                     issuer: https://token.actions.githubusercontent.com
                     subjectRegExp: https://github\.com/cloudnative-pg/postgres-containers/\.github/workflows/.+
+                    rekor:
+                      url: https://rekor.sigstore.dev
