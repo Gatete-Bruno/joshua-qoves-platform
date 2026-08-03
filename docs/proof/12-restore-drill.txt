@@ -1,0 +1,11 @@
+== restore drill: qoves-db-restored recovered from s3://qoves-backups/qoves-db via git commit ==
+NAME                AGE     INSTANCES   READY   STATUS                     PRIMARY
+qoves-db-restored   2m53s   1           1       Cluster in healthy state   qoves-db-restored-1
+ id |       note        |              at               
+----+-------------------+-------------------------------
+  1 | before pod delete | 2026-08-03 15:46:02.664145+00
+(1 row)
+
+
+note: first attempt was blocked by netpols scoped to cnpg.io/cluster=qoves-db;
+the drill caught it, fixed in commit 'netpol: select any cnpg cluster pods'
