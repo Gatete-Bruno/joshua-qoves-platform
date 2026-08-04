@@ -5,7 +5,7 @@ metadata:
   namespace: qoves-app
 spec:
   instances: 2
-  imageName: registry:5000/postgresql:18.4@sha256:cad808790906aa770e1cd27100f1165703b91d5c1fb198ef1a94d719f5ceb942
+  imageName: registry:5000/postgresql:18.4@sha256:6c9a868a273cd1c799fcdd4ba60d09e05d9f0218a5b4197c5bb52904748336c6
   primaryUpdateStrategy: unsupervised
   bootstrap:
     initdb:

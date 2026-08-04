@@ -12,4 +12,4 @@ resources:
 images:
   - name: qoves-api
     newName: registry:5000/qoves-api
-    digest: sha256:da618cad2c3be7604e6ba28874ad16a4e74d0c78f02e8e915714f60d8297783f
+    digest: sha256:8c400508200f3014869e309eaa9524b68fabce3bb7a91b3f9f8389fe95ac0243
